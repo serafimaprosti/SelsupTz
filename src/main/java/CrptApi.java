@@ -65,8 +65,8 @@ public class CrptApi {
 
         try (
                 CloseableHttpClient client = HttpClients.createDefault();
+                CloseableHttpResponse response = client.execute(httpPost);
         ) {
-            client.execute(httpPost);
         }catch (IOException exception){
             throw new RuntimeException("Error executing HTTP request", exception);
         }
